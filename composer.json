@@ -1,0 +1,34 @@
+{
+  "authors": [
+    {
+      "email": "voss@gbv.de",
+      "name": "Jakob Voss"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  },
+  "description": "JSKOS wrapper to Virtual International Authority File (VIAF)",
+  "keywords": [
+    "VIAF",
+    "JSKOS"
+  ],
+  "license": "LGPL",
+  "name": "gbv/viaf-jskos",
+  "require": {
+    "gbv/jskos": ">=0.1.6",
+    "gbv/jskos-rdf": ">=0.1.2",
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": ">=6.0.0"
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit tests --verbose"
+    ]
+  },
+  "type": "library"
+}
