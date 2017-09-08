@@ -1,20 +1,19 @@
 <?php
 
-namespace VIAF\JSKOS;
+namespace JSKOS\Service;
 
 use JSKOS\ConceptScheme;
-use Helmich\JsonAssert\JsonAssertions;
 
-class VIAFServiceTest extends \PHPUnit\Framework\TestCase
+class VIAFTest extends \PHPUnit\Framework\TestCase
 {
     public function testExamples()
     {
-        $service = new Service();
+        $service = new VIAF();
 
         $uri = "http://viaf.org/viaf/87772061";
-        $jskos = $service->query(['uri'=>$uri]);
+        $result = $service->query(['uri'=>$uri]);
 
-        $this->assertEquals($jskos->uri, $uri);
-        $this->assertEquals($jskos->type[0], 'http://schema.org/Person');
+        $this->assertEquals($result[0]->uri, $uri);
+        $this->assertTrue($result[0]->type->contains('http://schema.org/Person'));
     }
 }

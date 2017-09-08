@@ -16,13 +16,13 @@ if (substr($arg, 0, 21) == 'http://viaf.org/viaf/') {
 } elseif (preg_match('/^\d+$/', $arg)) {
     $query = ['uri' => "http://viaf.org/viaf/$arg"];
 } else {
-    array_shift($argv);
+    array_shift($argv); # FIXME
     $query = ['search' => implode(' ', $argv)];
 }
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$service = new \VIAF\JSKOS\Service();
+$service = new \JSKOS\Service\VIAF();
 $jskos = $service->query($query);
 if ($jskos) {
     print "$jskos\n";

@@ -1,34 +1,33 @@
 {
-  "authors": [
-    {
-      "email": "voss@gbv.de",
-      "name": "Jakob Voss"
+    "name": "gbv/viaf-jskos",
+    "description": "JSKOS wrapper to Virtual International Authority File (VIAF)",
+    "keywords": [ "VIAF", "JSKOS" ],
+    "type": "library",
+    "license": "LGPL",
+    "authors": [
+        {
+          "email": "voss@gbv.de",
+          "name": "Jakob Voss"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "gbv/jskos": "^0.3.4",
+        "gbv/jskos-rdf": "^0.3",
+        "gbv/jskos-http": "^0.2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1",
+        "php-http/curl-client": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JSKOS\\Service\\": "src"
+        }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit tests --coverage-clover build/logs/clover.xml"
+        ]
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "": "src"
-    }
-  },
-  "description": "JSKOS wrapper to Virtual International Authority File (VIAF)",
-  "keywords": [
-    "VIAF",
-    "JSKOS"
-  ],
-  "license": "LGPL",
-  "name": "gbv/viaf-jskos",
-  "require": {
-    "gbv/jskos": ">=0.1.6",
-    "gbv/jskos-rdf": ">=0.1.2",
-    "php": ">=7.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": ">=6.0.0"
-  },
-  "scripts": {
-    "test": [
-      "vendor/bin/phpunit tests --verbose"
-    ]
-  },
-  "type": "library"
 }
